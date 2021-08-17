@@ -40,10 +40,10 @@ export const Container = styled.div`
     `}
 
     .blur-content {
-      padding: 15px 10px 15px 15px;
+      padding: 10px 10px 15px 15px;
 
       .title {
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         font-weight: 500;
         height: 65px;
       }

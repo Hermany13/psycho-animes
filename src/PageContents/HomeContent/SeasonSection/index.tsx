@@ -11,7 +11,7 @@ const SeasonSection: React.FC<Props> = ({ seasonAnime }) => {
   return (
     <S.Container>
       <div className="content">
-        <SectionTitle color="#000" title="In This Winter" />
+        <SectionTitle color="#000" title="To Watch This Spring" />
         <div className="cards-container">
           {seasonAnime.map((anime: Anime) => {
             return <Card {...anime} key={anime.id} />;

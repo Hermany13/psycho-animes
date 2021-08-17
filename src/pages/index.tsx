@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({ seasonAnime }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const seasonAnime = await getFilteredAnimes('season', 'winter');
+  const seasonAnime = await getFilteredAnimes('season', 'spring');
 
   return {
     props: {
