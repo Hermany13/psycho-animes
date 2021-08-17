@@ -8,17 +8,11 @@ import Document, {
 } from 'next/document';
 
 import { ServerStyleSheet } from 'styled-components';
-import {
-  RenderPageResult,
-  DocumentInitialProps,
-} from 'next/dist/next-server/lib/utils';
 
-type CombinedProps = RenderPageResult & any;
+type CombinedProps = any;
 
-export default class extends Document<CombinedProps> {
-  static async getInitialProps(
-    ctx: DocumentContext,
-  ): Promise<DocumentInitialProps> {
+export default class DefaultDocument extends Document<CombinedProps> {
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -49,7 +43,7 @@ export default class extends Document<CombinedProps> {
       <Html lang="pt-br">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css?family=Sacramento:400"
+            href="https://fonts.googleapis.com/css?family=Sacramento:400&display=swap"
             rel="stylesheet"
             type="text/css"
           />
