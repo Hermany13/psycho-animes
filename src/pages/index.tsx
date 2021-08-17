@@ -1,5 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { getAllAnimes, getFilteredAnimes } from 'services/Animes';
+import { getFilteredAnimes } from 'services/Animes';
 import Anime from 'models/Anime';
 import HomeContent from 'PageContents/HomeContent';
 

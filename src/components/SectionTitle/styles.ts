@@ -11,7 +11,7 @@ export const Container = styled.div<IProps>`
   text-align: center;
   color: ${(props) => props.color};
   font-family: 'Quicksand', sans-serif;
-  padding: 20px;
+  padding-top: 30px;
   font-size: 35px;
   align-items: center;
 

@@ -15,7 +15,7 @@ export const getFilteredAnimes = async (
   value: string,
 ): Promise<Anime[]> => {
   const { data: response } = await api.get<AnimeRequest>(
-    `anime?filter[${filterBy}]=${value}`,
+    `anime?filter[${filterBy}]=${value}&page[limit]=6`,
   );
 
   return response.data;

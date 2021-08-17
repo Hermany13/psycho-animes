@@ -7,7 +7,6 @@ export const Container = styled.div`
   background-color: gray;
   position: relative;
   box-shadow: 2px 3px 6px gray;
-  cursor: pointer;
 
   &:hover {
     .blur {
