@@ -35,7 +35,7 @@ const Banner: React.FC<Props> = ({ anime }) => {
               id="ytplayer"
               width="440"
               height="260"
-              src={`http://www.youtube.com/embed/${anime.attributes.youtubeVideoId}`}
+              src={`//www.youtube.com/embed/${anime.attributes.youtubeVideoId}`}
               frameBorder="0"
             />
           </div>
