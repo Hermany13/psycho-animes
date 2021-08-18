@@ -6,6 +6,7 @@ import { getAnimeById } from 'services/Animes';
 // Components
 import Layout from 'layout';
 import FallbackAnimePage from 'PageContents/FallbackAnimePage';
+import AnimePage from 'PageContents/AnimePage';
 
 interface Props {
   anime: Anime;
@@ -21,7 +22,11 @@ const Home: NextPage<Props> = ({ anime }) => {
       </Layout>
     );
   }
-  return <Layout>{anime.attributes.canonicalTitle}</Layout>;
+  return (
+    <Layout>
+      <AnimePage anime={anime} />
+    </Layout>
+  );
 };
 
 export const getStaticPaths = async () => {

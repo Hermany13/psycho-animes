@@ -21,6 +21,14 @@ export const getFilteredAnimes = async (
   return response.data;
 };
 
+export const getTrendingAnimes = async (): Promise<Anime[]> => {
+  const { data: response } = await api.get<AnimesRequest>(
+    `trending/anime?limit=6`,
+  );
+
+  return response.data;
+};
+
 export const getAnimeById = async (id?: string | string[]): Promise<Anime> => {
   const { data: response } = await api.get<AnimeRequest>(`anime/${id}`);
 

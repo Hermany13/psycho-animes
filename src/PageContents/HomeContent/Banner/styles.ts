@@ -2,24 +2,24 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
-  max-height: 100vh;
+  max-height: calc(100vh - 130px);
   text-align: center;
   position: relative;
 
   .content-hover {
     width: 100%;
     display: flex;
-    max-height: 100vh;
+    max-height: calc(100vh - 130px);
 
     justify-content: center;
 
     .content {
       width: 100%;
-      max-height: 100vh;
+      max-height: calc(100vh - 130px);
       background-color: #090051;
 
       img {
-        max-height: 100vh;
+        max-height: calc(100vh - 130px);
       }
     }
   }
@@ -27,7 +27,7 @@ export const Container = styled.section`
   .blur {
     position: absolute;
     width: 100%;
-    max-height: 100vh;
+    max-height: calc(100vh - 130px);
     top: 0;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);

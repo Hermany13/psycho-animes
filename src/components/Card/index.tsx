@@ -27,7 +27,9 @@ const Card: React.FC<Anime> = (anime: Anime) => {
               </div>
               <div className="text-align-container">
                 <div className="description-container">
-                  {anime.attributes.synopsis}
+                  {anime.attributes.synopsis.length > 200
+                    ? `${anime.attributes.synopsis.slice(0, 200)}...`
+                    : anime.attributes.synopsis}
                 </div>
               </div>
             </div>

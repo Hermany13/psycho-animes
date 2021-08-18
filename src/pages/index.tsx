@@ -1,5 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { getFilteredAnimes } from 'services/Animes';
+import { getTrendingAnimes } from 'services/Animes';
 import Anime from 'models/Anime';
 import HomeContent from 'PageContents/HomeContent';
 
@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({ seasonAnime }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const seasonAnime = await getFilteredAnimes('season', 'spring');
+  const seasonAnime = await getTrendingAnimes();
 
   return {
     props: {

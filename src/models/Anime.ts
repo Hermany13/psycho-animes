@@ -11,7 +11,7 @@ export default interface Anime {
       ja_jp: string;
     };
     canonicalTitle: string;
-    averageRating: string;
+    averageRating: number;
     startDate: string;
     endDate: string;
     ageRatingGuide: string;
@@ -25,7 +25,7 @@ export default interface Anime {
       large: string;
       original: string;
     };
-    coverImage: {
+    coverImage?: {
       tiny: string;
       small: string;
       medium: string;
@@ -33,5 +33,8 @@ export default interface Anime {
       original: string;
     };
     episodeCount: number;
+    youtubeVideoId: string;
+    ratingRank: number;
+    popularityRank: number;
   };
 }
