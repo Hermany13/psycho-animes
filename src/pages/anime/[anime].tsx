@@ -46,7 +46,7 @@ const Home: NextPage<Props> = ({ anime }) => {
         />
         <meta
           property="og:image"
-          content={anime.attributes.coverImage?.small || defaultBanner}
+          content={anime.attributes.posterImage?.small || defaultBanner}
         />
       </Head>
       <Layout>
