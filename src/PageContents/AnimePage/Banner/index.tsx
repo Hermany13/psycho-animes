@@ -37,6 +37,7 @@ const Banner: React.FC<Props> = ({ anime }) => {
               height="260"
               src={`//www.youtube.com/embed/${anime.attributes.youtubeVideoId}`}
               frameBorder="0"
+              title={anime.attributes.canonicalTitle}
             />
           </div>
         )}
