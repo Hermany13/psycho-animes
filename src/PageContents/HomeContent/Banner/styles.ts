@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.section`
   width: 100%;
@@ -39,6 +40,10 @@ export const Container = styled.section`
       color: #fff;
       font-size: 60px;
       font-family: 'Quicksand', sans-serif;
+
+      ${media.lessThan('small')`
+        font-size: 2em;
+      `}
 
       p {
         font-size: 30px;

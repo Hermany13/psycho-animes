@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.section`
   width: 100%;
@@ -14,6 +15,15 @@ export const Container = styled.section`
       gap: 80px;
       justify-content: center;
       grid-template-columns: auto auto auto;
+
+      ${media.lessThan('medium')`
+        grid-template-columns: auto auto;
+        gap: 40px;
+      `}
+
+      ${media.lessThan('small')`
+        grid-template-columns: auto;
+      `}
     }
   }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.header`
   width: 100%;
@@ -28,5 +29,9 @@ export const Container = styled.header`
     font-size: 50px;
     padding: 0 30px;
     font-family: 'Sacramento', sans-serif;
+
+    ${media.lessThan('small')`
+        font-size: 2em;
+    `}
   }
 `;
