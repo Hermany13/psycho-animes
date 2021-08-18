@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['media.kitsu.io'],
+    domains: ['media.kitsu.io', 'i.ibb.co'],
   },
 };
