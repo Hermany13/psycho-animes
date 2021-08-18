@@ -4,6 +4,22 @@ interface IProps {
   rating?: number;
 }
 
+const ratingColorSelector = (rating: number | undefined): string => {
+  if (rating) {
+    if (rating <= 40) {
+      return 'red';
+    }
+    if (rating >= 50 && rating < 70) {
+      return 'yellow';
+    }
+
+    if (rating >= 70) {
+      return 'green';
+    }
+  }
+  return '';
+};
+
 export const Container = styled.section`
   width: 100%;
   max-height: calc(100vh - 130px);
@@ -169,21 +185,7 @@ export const Container = styled.section`
 `;
 
 export const Rating = styled.span<IProps>`
-  background-color: ${(props) => {
-    if (props.rating) {
-      if (props.rating <= 40) {
-        return 'red';
-      }
-      if (props.rating >= 50 && props.rating < 70) {
-        return 'yellow';
-      }
-
-      if (props.rating >= 70) {
-        return 'green';
-      }
-    }
-  }};
-
+  background-color: ${(props) => ratingColorSelector(props.rating)};
   min-width: 40px;
   text-align: center;
   border-radius: 5px;

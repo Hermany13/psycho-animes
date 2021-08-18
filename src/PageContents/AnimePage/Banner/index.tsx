@@ -1,10 +1,6 @@
 import React from 'react';
 import Anime from 'models/Anime';
-
-// Components
 import Image from 'next/image';
-
-// Styled components
 import * as S from './styles';
 
 // Images
