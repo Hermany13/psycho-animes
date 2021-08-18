@@ -1,5 +1,7 @@
 import type { NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+
 import Anime from 'models/Anime';
 import { getAnimeById } from 'services/Animes';
 
@@ -12,6 +14,8 @@ interface Props {
   anime: Anime;
 }
 
+const defaultBanner = 'https://i.ibb.co/5kMkJBR/anime-desktop-nawpic.jpg';
+
 const Home: NextPage<Props> = ({ anime }) => {
   const router = useRouter();
 
@@ -23,9 +27,32 @@ const Home: NextPage<Props> = ({ anime }) => {
     );
   }
   return (
-    <Layout>
-      <AnimePage anime={anime} />
-    </Layout>
+    <>
+      <Head>
+        <title>Psycho Animes - {anime.attributes.canonicalTitle}</title>
+        <meta
+          name="description"
+          content={`${anime.attributes.synopsis.slice(0, 30)}...`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={anime.attributes.canonicalTitle} />
+        <meta
+          property="og:url"
+          content={`https://psycho-animes.vercel.app/anime/${anime.id}`}
+        />
+        <meta
+          property="og:description"
+          content={`${anime.attributes.synopsis.slice(0, 30)}...`}
+        />
+        <meta
+          property="og:image"
+          content={anime.attributes.coverImage?.small || defaultBanner}
+        />
+      </Head>
+      <Layout>
+        <AnimePage anime={anime} />
+      </Layout>
+    </>
   );
 };
 
