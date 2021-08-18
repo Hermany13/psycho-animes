@@ -29,7 +29,7 @@ const Banner: React.FC<Props> = ({ anime }) => {
         </div>
       </div>
       <div className="blur">
-        {anime.attributes.youtubeVideoId && (
+        {anime.attributes.youtubeVideoId !== null && (
           <div className="iframe">
             <iframe
               id="ytplayer"

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import media from 'styled-media-query';
 interface IProps {
   rating?: number;
 }
@@ -10,19 +10,48 @@ export const Container = styled.section`
   text-align: center;
   position: relative;
 
+  ${media.lessThan('small')`
+      height: 60vh;
+  `}
+
+  @media (max-width: 320px) {
+    height: 80vh;
+  }
+
   .content-hover {
     width: 100%;
     display: flex;
     max-height: calc(100vh - 130px);
     justify-content: center;
 
+    ${media.lessThan('small')`
+      height: 60vh;
+    `}
+
+    @media (max-width: 320px) {
+      height: 80vh;
+    }
+
     .content {
       width: 100%;
       max-height: calc(100vh - 130px);
       background-color: #090051;
 
+      ${media.lessThan('small')`
+        height: 60vh;
+      `}
+
       img {
         max-height: calc(100vh - 130px);
+
+        ${media.lessThan('small')`
+          height: 60vh;
+          object-fit: cover
+        `}
+      }
+
+      @media (max-width: 320px) {
+        height: 80vh;
       }
     }
   }
@@ -41,10 +70,38 @@ export const Container = styled.section`
     padding-left: 25px;
     padding-bottom: 25px;
 
+    ${media.lessThan('small')`
+        display: block;
+        min-height: 100%;
+        max-height: 100%;
+        height: 100vh;
+        padding-left: 0;
+        padding-right: 0;
+    `}
+
     .iframe {
       position: absolute;
       top: 50px;
       left: 30px;
+
+      ${media.lessThan('medium')`
+        top: 10px;
+        left: 10px;
+      `}
+
+      ${media.lessThan('small')`
+        top: 10px;
+        left: 10px;
+        position: unset;
+
+        iframe {
+          width: 100% !important;
+
+          @media (max-width: 320px) {
+            height: 35vh;
+          }
+        }
+      `}
     }
 
     .data-container {
@@ -57,17 +114,34 @@ export const Container = styled.section`
       font-family: 'Quicksand', sans-serif;
       color: #fff;
 
+      ${media.lessThan('small')`
+       padding: 0 10px;
+       height: 120px;
+      `}
+
+      @media (max-width: 320px) {
+        height: 40vh;
+      }
+
       .row {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin-bottom: 20px;
         margin-top: 5px;
+
+        ${media.lessThan('small')`
+          display: block;
+        `}
       }
 
       .title {
         font-size: 37px;
         font-weight: bold;
+
+        ${media.lessThan('small')`
+          font-size: 1.6em
+        `}
       }
 
       .meta {
@@ -85,6 +159,10 @@ export const Container = styled.section`
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
+
+        ${media.lessThan('small')`
+          margin-left: 0px;
+        `}
       }
     }
   }
