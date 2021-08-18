@@ -32,7 +32,7 @@ const Home: NextPage<Props> = ({ anime }) => {
         <title>Psycho Animes - {anime.attributes.canonicalTitle}</title>
         <meta
           name="description"
-          content={`${anime.attributes.synopsis.slice(0, 30)}...`}
+          content={`${anime.attributes.synopsis.slice(0, 80)}...`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={anime.attributes.canonicalTitle} />
@@ -42,7 +42,7 @@ const Home: NextPage<Props> = ({ anime }) => {
         />
         <meta
           property="og:description"
-          content={`${anime.attributes.synopsis.slice(0, 30)}...`}
+          content={`${anime.attributes.synopsis.slice(0, 80)}...`}
         />
         <meta
           property="og:image"
