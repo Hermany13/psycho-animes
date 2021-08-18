@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#nprogress .bar {
+  background: linear-gradient(to right, #3d3d3d, #f09) !important;
+}
