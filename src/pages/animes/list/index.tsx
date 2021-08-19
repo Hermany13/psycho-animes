@@ -1,4 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Layout from 'layout';
 import AnimeList from 'PageContents/AnimeList';
@@ -39,6 +40,21 @@ const Home: NextPage<Props> = ({ animes }) => {
 
   return (
     <>
+      <Head>
+        <title>Psycho Animes - Search</title>
+        <meta name="description" content="Find your favorite animes here!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Psycho Animes - Search" />
+        <meta property="og:url" content="https://psycho-animes.vercel.app/" />
+        <meta
+          property="og:description"
+          content="Find your favorite animes here!"
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/tc68cxz/psycho.png"
+        />
+      </Head>
       <Layout>
         <AnimeList
           animes={paginatedAnimes}

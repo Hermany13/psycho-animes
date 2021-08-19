@@ -7,11 +7,10 @@ import HomeContent from 'PageContents/HomeContent';
 // Components
 import Layout from 'layout';
 interface Props {
-  seasonAnime: Anime[];
   trendingAnimes: Anime[];
 }
 
-const Home: NextPage<Props> = ({ seasonAnime, trendingAnimes }) => {
+const Home: NextPage<Props> = ({ trendingAnimes }) => {
   return (
     <>
       <Head>
@@ -33,24 +32,16 @@ const Home: NextPage<Props> = ({ seasonAnime, trendingAnimes }) => {
         />
       </Head>
       <Layout>
-        <HomeContent
-          seasonAnime={seasonAnime}
-          trendingAnimes={trendingAnimes}
-        />
+        <HomeContent trendingAnimes={trendingAnimes} />
       </Layout>
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const [seasonAnime, trendingAnimes] = await Promise.all([
-    getFilteredAnimes('season', 'spring'),
-    getTrendingAnimes(),
-  ]);
-
+  const trendingAnimes = await getTrendingAnimes();
   return {
     props: {
-      seasonAnime,
       trendingAnimes,
     },
     revalidate: 1,
