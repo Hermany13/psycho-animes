@@ -4,16 +4,17 @@ import * as S from './styles';
 import Card from 'components/Card';
 
 interface Props {
-  seasonAnime: Anime[];
+  animes: Anime[];
+  title: string;
 }
 
-const SeasonSection: React.FC<Props> = ({ seasonAnime }) => {
+const SeasonSection: React.FC<Props> = ({ animes, title }) => {
   return (
     <S.Container>
       <div className="content">
-        <SectionTitle color="#000" title="To Watch This Spring" />
+        <SectionTitle color="#000" title={title} />
         <div className="cards-container">
-          {seasonAnime.map((anime: Anime) => {
+          {animes.map((anime: Anime) => {
             return <Card {...anime} key={anime.id} />;
           })}
         </div>

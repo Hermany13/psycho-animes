@@ -24,10 +24,10 @@ const Banner: React.FC = () => {
         </div>
       </div>
       <div className="blur">
-        <div className="title-container">
+        <h1 className="title-container">
           Psycho Animes
           <p>Where you find the best</p>
-        </div>
+        </h1>
       </div>
     </S.Container>
   );

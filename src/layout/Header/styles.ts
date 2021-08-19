@@ -8,6 +8,8 @@ export const Container = styled.header`
   padding: 0.4em;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
 
   @keyframes pulsate {
     100% {
@@ -25,7 +27,7 @@ export const Container = styled.header`
     color: #fff;
   }
 
-  a {
+  .neonText {
     font-size: 50px;
     padding: 0 30px;
     font-family: 'Sacramento', sans-serif;
@@ -33,5 +35,18 @@ export const Container = styled.header`
     ${media.lessThan('small')`
         font-size: 2em;
     `}
+  }
+
+  .link {
+    .ant-btn {
+      background-color: #f09;
+      border: none;
+    }
+
+    &:hover {
+      .ant-btn {
+        background-color: #ff9ad7;
+      }
+    }
   }
 `;

@@ -1,7 +1,7 @@
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-
+import { ParsedUrlQuery } from 'querystring';
 import Anime from 'models/Anime';
 import { getAnimeById } from 'services/Animes';
 
@@ -12,6 +12,10 @@ import AnimePage from 'PageContents/AnimePage';
 
 interface Props {
   anime: Anime;
+}
+
+interface IParams extends ParsedUrlQuery {
+  anime: string;
 }
 
 const defaultBanner = 'https://i.ibb.co/5kMkJBR/anime-desktop-nawpic.jpg';
@@ -56,7 +60,7 @@ const Home: NextPage<Props> = ({ anime }) => {
   );
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<IParams> = async () => {
   return {
     paths: [
       {

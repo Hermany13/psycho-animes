@@ -9,7 +9,7 @@ const Banner: React.FC<Props> = ({ description }) => {
   return (
     <S.Container>
       <div className="content">
-        <div className="title">Description</div>
+        <h2 className="title">Description</h2>
         {description}
       </div>
     </S.Container>

@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
-import { getTrendingAnimes } from 'services/Animes';
+import { getTrendingAnimes, getFilteredAnimes } from 'services/Animes';
 import Anime from 'models/Anime';
 import HomeContent from 'PageContents/HomeContent';
 
@@ -8,9 +8,10 @@ import HomeContent from 'PageContents/HomeContent';
 import Layout from 'layout';
 interface Props {
   seasonAnime: Anime[];
+  trendingAnimes: Anime[];
 }
 
-const Home: NextPage<Props> = ({ seasonAnime }) => {
+const Home: NextPage<Props> = ({ seasonAnime, trendingAnimes }) => {
   return (
     <>
       <Head>
@@ -32,18 +33,25 @@ const Home: NextPage<Props> = ({ seasonAnime }) => {
         />
       </Head>
       <Layout>
-        <HomeContent seasonAnime={seasonAnime} />
+        <HomeContent
+          seasonAnime={seasonAnime}
+          trendingAnimes={trendingAnimes}
+        />
       </Layout>
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const seasonAnime = await getTrendingAnimes();
+  const [seasonAnime, trendingAnimes] = await Promise.all([
+    getFilteredAnimes('season', 'spring'),
+    getTrendingAnimes(),
+  ]);
 
   return {
     props: {
       seasonAnime,
+      trendingAnimes,
     },
     revalidate: 1,
   };

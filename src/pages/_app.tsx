@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import 'antd/dist/antd.css';
 import '../styles/globals.css';
 
 NProgress.configure({ showSpinner: false });

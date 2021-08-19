@@ -1,16 +1,18 @@
 import Anime from 'models/Anime';
 import Banner from './Banner';
-import SeasonSection from './SeasonSection';
+import Section from 'components/Section';
 
 interface Props {
   seasonAnime: Anime[];
+  trendingAnimes: Anime[];
 }
 
-const HomeContent: React.FC<Props> = ({ seasonAnime }) => {
+const HomeContent: React.FC<Props> = ({ seasonAnime, trendingAnimes }) => {
   return (
     <>
       <Banner />
-      <SeasonSection seasonAnime={seasonAnime} />
+      <Section animes={trendingAnimes} title="Trending" />
+      <Section animes={seasonAnime} title="to watch this spring" />
     </>
   );
 };
